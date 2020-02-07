@@ -1,0 +1,101 @@
+<hr>
+<div class="row m-b-18px">
+  <div class="col-md-12">
+      <a (click)="readBooks()" class='btn btn-primary pull-right'>
+          <span class='glyphicon glyphicon-list'></span> Read Books
+      </a>
+  </div>
+</div>
+
+<!-- HTML form for creating a product -->
+<div class="row">
+<div class="col-md-12">
+
+<!--
+  1. Bind our HTML form to Angular using [formGroup]
+  2. If form was submitted, call createProduct() method of CreateProductComponent
+-->
+<form [formGroup]="create_book_form" (ngSubmit)="createBook()">
+<table class="table table-hover table-responsive table-bordered">
+  <tr>
+      <td>Name</td>
+      <td>
+          <!-- Bind this input field to our 'angular form field' using formControlName -->
+          <input
+              formControlName="name"
+              name="name" type="string"
+              class="form-control" required />
+
+          <!-- show this error if the field is 'empty' and 'touched' -->
+          <div
+              *ngIf="create_book_form.get('name').touched && create_book_form.get('name').hasError('required')"
+              class="alert alert-danger">
+              Name is required.
+          </div>
+      </td>
+  </tr>
+
+  <tr>
+    <td>Author</td>
+    <td>
+        <input
+            formControlName="author"
+            type="string" name="author"
+            class="form-control" required />
+
+        <!-- show this error if the field is 'empty' and 'touched' -->
+        <div
+            *ngIf="create_book_form.get('author').touched && create_book_form.get('author').hasError('required')"
+            class="alert alert-danger">
+        Author is required.
+        </div>
+    </td>
+</tr>
+
+<tr>
+  <td>Price</td>
+  <td>
+      <input
+          formControlName="price"
+          type="number" name="price"
+          class="form-control" required />
+
+      <!-- show this error if the field is 'empty' and 'touched' -->
+      <div
+          *ngIf="create_book_form.get('price').touched && create_book_form.get('price').hasError('price')"
+          class="alert alert-danger">
+      Price is required.
+      </div>
+  </td>
+</tr>
+
+<tr>
+      <td>Availability</td>
+      <td>
+        <input
+        formControlName="availability"
+        type="string" name="availability"
+        class="form-control" required />
+
+              <!-- show this error if the field is 'empty' and 'touched' -->
+              <div
+                  *ngIf="create_book_form.get('availability').touched && create_book_form.get('availability').hasError('required')"
+                  class="alert alert-danger">
+                  Availability is required.
+              </div>
+      </td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>
+          <!-- disable the submit button if the form is 'invalid' -->
+          <button class="btn btn-primary" type="submit" [disabled]="create_book_form.invalid">
+              <span class="glyphicon glyphicon-plus"></span> Create
+          </button>
+      </td>
+  </tr>
+</table>
+</form>
+
+</div>
+</div>

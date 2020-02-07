@@ -1,0 +1,40 @@
+<hr>
+<div class="row m-b-18px">
+  <div class="col-md-12">
+          <a [routerLink]="['/readbooks']" class='btn btn-primary pull-right'>
+          <span class='glyphicon glyphicon-list'></span> Read Employees
+      </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <!-- HTML table for displaying a product details -->
+      <table *ngIf="book" class='table table-hover table-responsive table-bordered'>
+          <tr>
+              <td class="w-40-pct">Id</td>
+              <td>{{book.id}}</td>
+          </tr>
+
+          <tr>
+              <td>Name</td>
+              <td>{{book.name}}</td>
+          </tr>
+
+          <tr>
+            <td>Author</td>
+            <td>{{book.author}}</td>
+          </tr>         
+
+          <tr>
+            <td>Price</td>
+            <td>{{book.price}}</td>
+          </tr>
+
+          <tr>
+            <td>Availability</td>
+            <td>{{book.availability}}</td>
+          </tr>
+      </table>
+  </div>
+</div>

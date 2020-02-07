@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReadOneEmployeeComponent } from './read-one-employee.component';
+import { DeleteBookComponent } from './delete-book.component';
 
-describe('ReadOneEmployeeComponent', () => {
-  let component: ReadOneEmployeeComponent;
-  let fixture: ComponentFixture<ReadOneEmployeeComponent>;
+describe('DeleteEmployeeComponent', () => {
+  let component: DeleteBookComponent;
+  let fixture: ComponentFixture<DeleteBookComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadOneEmployeeComponent ]
+      declarations: [ DeleteBookComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReadOneEmployeeComponent);
+    fixture = TestBed.createComponent(DeleteBookComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

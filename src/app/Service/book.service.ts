@@ -3,53 +3,53 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable} from 'rxjs';
 import { catchError } from 'rxjs/operators'
 import { map } from 'rxjs/operators';
-import { Employee } from '../employee';
+import { Book } from '../book';
  
 @Injectable()
 // Service for Employee data.
-export class EmployeeService { 
+export class BookService { 
     // We need Http to talk to a remote server.
     constructor(private _http : Http){ } 
     // Get list of employees from remote server.
-    readEmployees()   
+    readBooks()   
     {
-        return this._http.get("http://localhost:51789/api/Employee/");            
+        return this._http.get("http://localhost:21021/api/BookDetails/");            
     }
     
     // Send employee data to remote server to create it.
-    createEmployee(employee)
+    createBook(book)
     {  
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
 
-        return this._http.post("http://localhost:51789/api/Employee/", JSON.stringify(employee), options);        
+        return this._http.post("http://localhost:21021/api/BookDetails/", JSON.stringify(book), options);        
     }
 
     // Get a employee details from remote server.
-    readOneEmployee(empreg_id)
+    readOneBook(bookId)
     {
-        return this._http.get("http://localhost:51789/api/Employee?id="+empreg_id);
+        return this._http.get("http://localhost:21021/api/BookDetails/"+bookId);
     }
 
     // Send employee data to remote server to update it.
-    updateEmployee(empreg_id,employee)
+    updateBook(bookId,book)
     { 
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
  
-    return this._http.put("http://localhost:51789/api/Employee/?id="+empreg_id+"",JSON.stringify(employee), options);
+    return this._http.put("http://localhost:21021/api/BookDetails/"+bookId+"",JSON.stringify(book), options);
        
     }
 
     // Send employee ID to remote server to delete it.
-deleteEmployee(empreg_id)
-{
- 
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
- 
-    return this._http.delete("http://localhost:51789/api/Employee?id="+empreg_id, options);        
-    //pipe(map((res: Response) => res.json()));
-}
+    deleteBook(bookId)
+    {
+    
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+    
+        return this._http.delete("http://localhost:21021/api/BookDetails/"+bookId, options);        
+        //pipe(map((res: Response) => res.json()));
+    }
        
 }

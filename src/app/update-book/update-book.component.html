@@ -1,8 +1,8 @@
 <hr>
 <div class="row m-b-18px">
   <div class="col-md-12">
-      <a (click)="readEmployees()" class='btn btn-primary pull-right'>
-          <span class='glyphicon glyphicon-list'></span> Read Employees
+      <a (click)="readBooks()" class='btn btn-primary pull-right'>
+          <span class='glyphicon glyphicon-list'></span> Read Books
       </a>
   </div>
 </div>
@@ -11,20 +11,20 @@
 <div class="col-md-12">
 
 <!-- HTML form for creating a product -->
-<form [formGroup]="update_employee_form" (ngSubmit)="updateEmployee()">
+<form [formGroup]="update_book_form" (ngSubmit)="updateBook()">
 <table class='table table-hover table-responsive table-bordered'>
 
         <tr>
-                <td>Primary Skill</td>
+                <td>Price</td>
                 <td>
                     <input
-                        formControlName="primarySkill"
-                        type="string" name="primarySkill"
+                        formControlName="price"
+                        type="number" name="price"
                         class="form-control" />
               
                     <!-- show this error if the field is 'empty' and 'touched' -->
                     <!-- <div
-                        *ngIf="update_employee_form.get('primarySkill').touched && update_employee_form.get('primarySkill').hasError('required')"
+                        *ngIf="update_book_form.get('primarySkill').touched && update_book_form.get('primarySkill').hasError('required')"
                         class="alert alert-danger">
                     Primary Skill is required.
                     </div> -->
@@ -32,33 +32,33 @@
               </tr>
 
     <tr>
-        <td>Experience</td>
+        <td>Availability</td>
         <td>
             <input
-                formControlName="experience"
-                type="number" name="experience"
+                formControlName="availability"
+                type="string" name="availability"
                 class="form-control" required />
       
             <!-- show this error if the field is 'empty' and 'touched' -->
-            <div
-                *ngIf="update_employee_form.get('experience').touched && update_employee_form.get('experience').hasError('required')"
+            <!-- <div
+                *ngIf="update_book_form.get('availability').touched && update_book_form.get('availability').hasError('required')"
                 class="alert alert-danger">
-            Experience is required.
-            </div>
+            Year is required.
+            </div> -->
         </td>
       </tr>
 
-      <tr>
+      <!-- <tr>
         <td>Notice Period</td>
         <td>
             <input
                 formControlName="noticePeriod"
                 type="number" name="noticePeriod"
-                class="form-control" required />
+                class="form-control" required /> -->
       
             <!-- show this error if the field is 'empty' and 'touched' -->
-            <div
-                *ngIf="update_employee_form.get('noticePeriod').touched && update_employee_form.get('noticePeriod').hasError('required')"
+            <!-- <div
+                *ngIf="update_book_form.get('noticePeriod').touched && update_book_form.get('noticePeriod').hasError('required')"
                 class="alert alert-danger">
              Notice Period is required.
             </div>
@@ -74,21 +74,21 @@
           class="form-control" required />
   
                 <!-- show this error if the field is 'empty' and 'touched' -->
-                <div
-                    *ngIf="update_employee_form.get('CTC').touched && update_employee_form.get('CTC').hasError('required')"
+               <!--  <div
+                    *ngIf="update_book_form.get('CTC').touched && update_book_form.get('CTC').hasError('required')"
                     class="alert alert-danger">
                     CTC is required.
                 </div>
         </td>
         </tr>
-    <tr>
+    <tr> --> 
   
 
   <tr>
       <td></td>
       <td>
           <!-- Submit buttons is [disabled] if form is invalid. -->
-          <button class="btn btn-primary" type="submit" [disabled]="update_employee_form.invalid">
+          <button class="btn btn-primary" type="submit" [disabled]="update_book_form.invalid">
               <span class="glyphicon glyphicon-edit"></span> Update
           </button>
       </td>

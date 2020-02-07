@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { AppComponent } from './app.component';
-import { EmployeeService } from './Service/employee.service';
+import { BookService } from './Service/book.service';
 import { AccountService } from './Service/account.service';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule, routingComponents } from './/Routing/app-routing.module';
@@ -15,10 +15,10 @@ import { AppRoutingModule, routingComponents } from './/Routing/app-routing.modu
     LoginComponent
   ],
   imports: [
-    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, AppRoutingModule 
+    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule, AppRoutingModule
   ],
   providers: [
-    EmployeeService,
+    BookService,
     AccountService
   ],
   bootstrap: [AppComponent]
