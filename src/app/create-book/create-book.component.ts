@@ -28,11 +28,11 @@ export class CreateBookComponent {
       });
   }
 
-  createEmployee(){     
+  createBook(){     
       this.bookService.createBook(this.create_book_form.value)
           .subscribe(
                book => {                  
-                  console.log(book);
+                //   console.log(book);
                   this.readBooks();
                },
                error => console.log(error)

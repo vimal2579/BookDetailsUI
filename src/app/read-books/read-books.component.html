@@ -40,19 +40,19 @@
                 <td>{{book.availability}}</td>
                 <td style="width:270px;">
                     <!-- read one product button -->                    
-                    <a (click)="readOneBook(book.id )" class='btn btn-primary m-r-3px'>
+                    <button (click)="readOneBook(book.id )" class='btn btn-primary m-r-3px'>
                         <span class='glyphicon glyphicon-eye-open'></span> Read
-                    </a>
+                    </button>
  
                     <!-- edit product button -->
-                    <a (click)="updateBook(book.id)" class='btn btn-info m-r-3px'>
+                    <button (click)="updateBook(book.id)" [disabled] = "isDisabled" class='btn btn-info m-r-3px'>
                         <span class='glyphicon glyphicon-edit'></span> Edit
-                    </a>
+                    </button>
  
                     <!-- delete product button -->
-                    <a (click)="deleteBook(book.id)" class='btn btn-danger m-r-3px'>
+                    <button (click)="deleteBook(book.id)" class='btn btn-danger m-r-3px'>
                         <span class='glyphicon glyphicon-remove'></span> Delete
-                    </a>
+                    </button>
                 </td>
             </tr>
         </table>

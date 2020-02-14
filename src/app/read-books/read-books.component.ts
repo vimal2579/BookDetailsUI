@@ -16,6 +16,7 @@ export class ReadBooksComponent implements OnInit {
  
     // store list of books
     books : Book[];
+    isDisabled = true;
  
     constructor(private _bookService: BookService,
     private router : Router){}

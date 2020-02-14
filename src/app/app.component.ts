@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pageTitle = 'Employees Application Overview';
-  imgUrl = "https://cdn-payscale.com/content/data-packages/employee-engagement/dist/img/introduction.svg";
-  isDisabled: boolean = true;
+  pageTitle = 'Book Inventory Details';
+  imgUrl = 'https://media-assets.bookbub.com/wp-content/uploads/2016/04/Tattered-Cover-Book-Store-in-Denver-Colorado.jpg';
+  isDisabled = true;
 }
