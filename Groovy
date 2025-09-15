@@ -1,0 +1,30 @@
+    import com.cloudbees.plugins.credentials.CredentialsProvider
+    import com.cloudbees.plugins.credentials.CredentialsScope
+    import jenkins.model.Jenkins
+    import org.jenkinsci.plugins.oidc.OpenIDConnectIdTokenCredential
+    import com.cloudbees.plugins.credentials.domains.Domain
+
+    // Define credential details
+    def credentialId = "my-oidc-credential"
+    def description = "OpenID Connect ID Token for my application"
+    def issuer = "https://your-oidc-provider.com/issuer" // Replace with your OIDC provider's issuer URL
+    def audience = "your-audience-id" // Replace with your audience ID
+
+    // Get the global credentials store
+    def store = Jenkins.instance.getExtensionList(CredentialsProvider.class).find{it.supports(OpenIDConnectIdTokenCredential.class)}
+    def globalStore = store.getStore(Jenkins.instance)
+    def domain = Domain.global()
+
+    // Create the OpenIDConnectIdTokenCredential object
+    def credential = new OpenIDConnectIdTokenCredential(
+        CredentialsScope.GLOBAL,
+        credentialId,
+        description,
+        issuer,
+        audience
+    )
+
+    // Add the credential to the store
+    globalStore.addCredentials(domain, credential)
+
+    println "OpenID Connect ID Token credential '$credentialId' created successfully."
